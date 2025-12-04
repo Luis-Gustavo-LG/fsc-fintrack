@@ -36,6 +36,13 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      'react-refresh/only-export-components': [
+        'warn',
+        {
+          ignoreExportsPattern: '^_',
+        },
+      ],
+      'react/prop-types': 'off',
     },
   },
 
