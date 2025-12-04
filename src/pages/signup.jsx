@@ -3,8 +3,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router'
-import { EyeOff, Eye } from 'lucide-react'
 import PasswordInput from '@/components/password-input'
+import { Checkbox } from '../components/ui/checkbox'
+import { Label } from '../components/ui/label'
 
 const SignupPage = () => {
 
@@ -23,6 +24,16 @@ const SignupPage = () => {
           <Input placeholder="Digíte seu email" />
           <PasswordInput/>
           <PasswordInput placeholder="Confirme sua senha"/>
+          <div className="flex flex-col gap-6">
+      <div className="items-top flex space-x-2 space-y-0">
+        <Checkbox id="terms-1" />
+        <div className="leading-none">
+            <label className="text-xs text-muted-foreground opacity-75" htmlFor="terms-1">
+                Ao clicar em "Criar conta" você aceita  <span className='text-white underline'>nosso termo de uso e política de privacidade.</span>
+            </label>
+        </div>
+      </div>
+    </div>
         </CardContent>
         <CardFooter>
           <Button className="w-full">Criar conta</Button>
