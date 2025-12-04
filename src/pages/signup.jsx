@@ -4,10 +4,9 @@ import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router'
 import { EyeOff, Eye } from 'lucide-react'
+import PasswordInput from '@/components/password-input'
 
 const SignupPage = () => {
-
-    const [showPassword, setShowPassword] = useState(false)
 
   return (
     <div className="flex flex-col h-screen w-screen items-center justify-center">
@@ -22,15 +21,8 @@ const SignupPage = () => {
           <Input placeholder="Digíte seu nome" />
           <Input placeholder="Digíte seu sobrenome" />
           <Input placeholder="Digíte seu email" />
-          <div className='relative'>
-            <Input type={showPassword ? "text" : "password"} placeholder="Digíte sua senha" />
-            <Button
-             variant="ghost"
-             className="absolute right-0 top-0 bottom-0 my-auto mr-1 h-8 w-8 text-muted-foreground"
-             onClick={(prev) => setShowPassword(!prev)}>
-                {showPassword ? <Eye/> : <EyeOff/>}
-            </Button>
-          </div>
+          <PasswordInput/>
+          <PasswordInput placeholder="Confirme sua senha"/>
         </CardContent>
         <CardFooter>
           <Button className="w-full">Criar conta</Button>
